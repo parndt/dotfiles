@@ -1,0 +1,89 @@
+##################################################################################
+# Bash Stuff
+##################################################################################
+
+alias rehash='source ~/.bash_profile'
+alias l='ls -G'
+alias ls='ls -G'
+alias s='open -a "Sublime Text 2.app"'
+
+n() {
+  /usr/local/bin/growlnotify --message "$@" -t "Console"
+}
+
+##################################################################################
+# Mac Vim
+##################################################################################
+
+mvim() {
+  (unset GEM_PATH GEM_HOME; command mvim "$@")
+}
+alias vim='mvim'
+
+##################################################################################
+# RVM
+##################################################################################
+
+function mkrvmrc {
+  rvm --rvmrc --create "${1:-'1.9.2'}"
+}
+
+##################################################################################
+# Git
+##################################################################################
+
+alias git='hub'
+alias ci='git commit -m'
+alias co='git checkout'
+alias gb='git branch'
+alias gs='git status'
+alias ga='git add'
+alias gbr='git browse'
+alias clone='git clone'
+alias pull='git pull'
+alias gd='git diff'
+alias gl='git log'
+alias gr='git remote -v'
+alias gh='open -a "Google Chrome.app" "http://defunkt.io/hub/"'
+
+push() {
+  git push $@ 
+  n "git push $@ finished."
+}
+
+#
+alias pa='push && push heroku'
+
+##################################################################################
+# Rails / Ruby Stuff
+##################################################################################
+
+alias r='rails'
+alias rc='rails console'
+alias rs='rails server'
+alias rake='bundle exec rake'
+alias rst='touch tmp/restart.txt'
+alias wat='tail -n 50 log/development.log'
+alias watt='tail -f log/development.log'
+
+alias ss='./script/server'
+alias sc='./script/console'
+alias unpack='gem unpack $1 --target $2'
+
+alias bi='bundle install --without production'
+
+##################################################################################
+# Refinery Stuff
+##################################################################################
+
+gut() {
+  rake refinery:override $@
+  n "Finished overriding $@"
+}  
+
+##################################################################################
+# Fun Stuff
+##################################################################################
+
+alias robot='say -v cellos'
+alias hawking='say -v bruce'

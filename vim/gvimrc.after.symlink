@@ -1,0 +1,15 @@
+color molokai
+set transparency=2
+set guifont=Monaco:h14
+
+" Allow buffer switch without save
+set hidden
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Random Aliases
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Close current buffer without closing window
+command BW :bn|:bd#
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

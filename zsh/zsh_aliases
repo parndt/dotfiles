@@ -1,10 +1,11 @@
 ##################################################################################
-# Bash Stuff
+# ZSH Stuff
 ##################################################################################
 
-alias rehash='source ~/.bash_profile'
-alias l='ls -G'
-alias ls='ls -G'
+alias A='vim $HOME/.dotfiles/zsh/zsh_aliases'
+alias rehash='source ~/.zshrc'
+#alias l='ls -G'
+#alias ls='ls -G'
 alias s='open -a "Sublime Text 2.app"'
 
 n() {
@@ -18,11 +19,28 @@ n() {
 mvim() {
   (unset GEM_PATH GEM_HOME; command mvim "$@")
 }
-alias vim='mvim'
-
+alias e='mvim'
 ##################################################################################
 # RVM
 ##################################################################################
+
+function rr {
+  cwd=`pwd`
+  not_found=true
+  while [[ "`pwd`" != "/" &&  $not_found == true ]]; do
+    if [[ ( -f '.rails_root' ) || ( -d 'app' && -d 'config' ) ]]; then
+      not_found=false
+      cd `pwd`
+      continue
+    fi
+    cd ..
+  done
+
+  if [[ $not_found == true ]]; then
+    cd $cwd
+    echo "Rails root not found."
+  fi
+}
 
 function mkrvmrc {
   rvm --rvmrc --create "${1:-'1.9.2'}"
@@ -62,6 +80,7 @@ alias r='rails'
 alias rc='rails console'
 alias rs='rails server'
 alias rake='bundle exec rake'
+alias orake='`which rake`'
 alias rst='touch tmp/restart.txt'
 alias wat='tail -n 50 log/development.log'
 alias watt='tail -f log/development.log'

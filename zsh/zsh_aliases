@@ -6,7 +6,7 @@ alias A='vim $HOME/.dotfiles/zsh/zsh_aliases'
 alias rehash='source ~/.zshrc'
 #alias l='ls -G'
 #alias ls='ls -G'
-alias s='open -a "Sublime Text 2.app"'
+#alias s='open -a "Sublime Text 2.app"'
 
 n() {
   /usr/local/bin/growlnotify --message "$@" -t "Console"
@@ -79,8 +79,7 @@ alias pa='push && push heroku'
 alias r='rails'
 alias rc='rails console'
 alias rs='rails server'
-alias rake='bundle exec rake'
-alias orake='`which rake`'
+alias brake='bundle exec rake'
 alias rst='touch tmp/restart.txt'
 alias wat='tail -n 50 log/development.log'
 alias watt='tail -f log/development.log'

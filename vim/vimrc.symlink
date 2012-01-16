@@ -1,0 +1,68 @@
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"
+"	.vimrc
+"	Rob Yurkowski
+"	v 0.1
+"	
+"	For system and MacVim.
+"
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+call pathogen#infect('~/.dotfiles/vim/bundles-enabled') " Pathogen: a mod loader for Vim.  
+
+set nocompatible " Disable vi compatibility mode -- enables advanced features (?)
+syntax on " Do syntax highlighting
+set hidden " Allow buffer switch without save
+set listchars=""
+set listchars=tab:\ \ 
+set listchars+=trail:.
+set listchars+=extends:>
+set listchars+=precedes:<
+
+set number " Show line numbers
+set ruler " Show line / column number
+
+set encoding=utf-8 " Set default encoding to be utf-8
+set nowrap " Default: don't wrap.
+set tabstop=2 " Default tab-spacing
+set shiftwidth=2 " Auto-indent size
+set expandtab " Use spaces for tabs
+set list " Show invisible characters
+
+set backupdir=~/.vim/_backup//  " Backup files
+set directory=~/.vim/_temp// " Temp files
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Random Aliases
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Indent entire file.
+nmap <leader>fef ggVG=
+
+" Previous and next buffer.
+nmap <silent> ,. :bnext<CR>
+nmap <silent> ,m :bprev<CR>
+
+" Toggle text wrap.
+nmap <silent> <leader>tw :set invwrap<CR>:set wrap?<CR>
+
+" Correct arrow keys
+map <Down> gj
+map <Up> gk
+
+command BW :bn|:bd# " Close current buffer without closing window
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Status-line stuff
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+if has("statusline") && !&cp
+  set laststatus=2 " always show the status bar
+  set noequalalways
+  set statusline=%f\ %m\ %r
+  
+  set statusline+=Line:%l/%L[%p%%]
+  set statusline+=Col:%v
+  set statusline+=Buf:#%n
+  set statusline+=[%b][0x%B]
+endif

@@ -2,6 +2,7 @@
 # ZSH Stuff
 ##################################################################################
 
+alias S='cd ~/Sites'
 alias A='vim $HOME/.dotfiles/zsh/zsh_aliases'
 alias rehash='source ~/.zshrc'
 #alias l='ls -G'
@@ -13,8 +14,21 @@ n() {
 }
 
 ##################################################################################
-# Mac Vim
+# Vim
 ##################################################################################
+
+vpa() {
+  pushd ~/.dotfiles
+  echo "Cloning..."
+  git submodule add $1 vim/bundles-available/$2
+  cd vim/bundles-enabled
+  echo "Linking..."
+  ln -s ../bundles-available/$2
+  echo "Done!"
+  popd
+}
+
+alias vim='mvim -v'
 
 mvim() {
   (unset GEM_PATH GEM_HOME; command mvim "$@")

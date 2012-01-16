@@ -1,3 +1,24 @@
 [submodule "vim/bundles-available/supertab"]
 	path = vim/bundles-available/supertab
 	url = https://github.com/ervandew/supertab
+[submodule "vim/bundles-available/nerdtree"]
+	path = vim/bundles-available/nerdtree
+	url = https://github.com/scrooloose/nerdtree.git
+[submodule "vim/bundles-available/vim-ruby"]
+	path = vim/bundles-available/vim-ruby
+	url = https://github.com/vim-ruby/vim-ruby
+[submodule "vim/bundles-available/snipmate"]
+	path = vim/bundles-available/snipmate
+	url = https://github.com/msanders/snipmate.vim
+[submodule "vim/bundles-available/vim-rails"]
+	path = vim/bundles-available/vim-rails
+	url = https://github.com/tpope/vim-rails
+[submodule "vim/bundles-available/vim-haml"]
+	path = vim/bundles-available/vim-haml
+	url = https://github.com/tpope/vim-haml
+[submodule "vim/bundles-available/command-t"]
+	path = vim/bundles-available/command-t
+	url = https://github.com/wincent/Command-T.git
+[submodule "vim/bundles-available/molokai"]
+	path = vim/bundles-available/molokai
+	url = https://github.com/cschlueter/vim-molokai

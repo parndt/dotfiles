@@ -22,3 +22,6 @@
 [submodule "vim/bundles-available/molokai"]
 	path = vim/bundles-available/molokai
 	url = https://github.com/cschlueter/vim-molokai
+[submodule "vim/bundles-available/surround"]
+	path = vim/bundles-available/surround
+	url = https://github.com/tpope/vim-surround

@@ -55,7 +55,8 @@ nnoremap <leader>= yypVr=
 nnoremap <leader>" 80i"<ESC>
 nnoremap <leader># 80i#<ESC>
 
-map <D-t> :LustyFilesystemExplorerFromHere
+nnoremap <C-t> :CommandT<CR>
+nnoremap <C-b> :CommandTBuffer<CR>
 
 command BW :bn|:bd# " Close current buffer without closing window
 

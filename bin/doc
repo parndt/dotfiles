@@ -1,0 +1,11 @@
+#!/usr/bin/env ruby
+page = ""
+page = case(ARGV[0].downcase)
+when 'heroku_san', 'hs'
+  "https://github.com/fastestforward/heroku_san"
+when 'hub'
+  "http://defunkt.io/hub"
+end
+
+puts "Opening #{page}..."
+Kernel.system %Q(open -a "Google Chrome.app" "#{page}")

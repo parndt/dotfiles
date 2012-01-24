@@ -1,5 +1,7 @@
 set guifont=Monaco:h16
 
 macmenu &File.New\ Tab key=<D-S-t>
-nnoremap <D-t> :CommandT<CR>
-nnoremap <D-b> :CommandTBuffer<CR>
+nnoremap <D-t> :CtrlP<CR>
+
+map <leader>c :HEX<CR>
+imap <leader>c <ESC>:HEX<CR>

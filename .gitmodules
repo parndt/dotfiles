@@ -16,12 +16,12 @@
 [submodule "vim/bundles-available/vim-haml"]
 	path = vim/bundles-available/vim-haml
 	url = https://github.com/tpope/vim-haml
-[submodule "vim/bundles-available/command-t"]
-	path = vim/bundles-available/command-t
-	url = https://github.com/wincent/Command-T.git
 [submodule "vim/bundles-available/molokai"]
 	path = vim/bundles-available/molokai
 	url = https://github.com/cschlueter/vim-molokai
 [submodule "vim/bundles-available/surround"]
 	path = vim/bundles-available/surround
 	url = https://github.com/tpope/vim-surround
+[submodule "vim/bundles-available/ctrl-p"]
+	path = vim/bundles-available/ctrl-p
+	url = https://github.com/kien/ctrlp.vim.git

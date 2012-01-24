@@ -2,12 +2,24 @@
 # ZSH Stuff
 ##################################################################################
 
-alias S='cd ~/Sites'
+#alias S='cd ~/Sites'
 alias A='vim $HOME/.dotfiles/zsh/zsh_aliases'
+alias T='vim ~/.todo'
 alias rehash='source ~/.zshrc'
 #alias l='ls -G'
 #alias ls='ls -G'
 #alias s='open -a "Sublime Text 2.app"'
+
+p() {
+  firstletter="${1:0:1}"
+  cd ~/Sites/$firstletter/$1
+
+  if [ "$2" ]
+  then
+    mvim .
+    powder open
+  fi
+}
 
 n() {
   /usr/local/bin/growlnotify --message "$@" -t "Console"
@@ -34,6 +46,8 @@ mvim() {
   (unset GEM_PATH GEM_HOME; command mvim "$@")
 }
 alias e='mvim'
+alias V='vim ~/.vimrc'
+alias G='vim ~/.gvimrc'
 ##################################################################################
 # RVM
 ##################################################################################
@@ -57,7 +71,7 @@ function rr {
 }
 
 function mkrvmrc {
-  rvm --rvmrc --create "${1:-'1.9.2'}"
+  rvm --rvmrc --create "${1:-1.9.2}"
 }
 
 ##################################################################################
@@ -68,15 +82,14 @@ alias git='hub'
 alias ci='git commit -m'
 alias co='git checkout'
 alias gb='git branch'
-alias gs='git status'
+alias gs='git status -sb'
 alias ga='git add'
 alias gbr='git browse'
 alias clone='git clone'
 alias pull='git pull'
-alias gd='git diff'
-alias gl='git log'
+alias gd='git diff --word-diff'
+alias gl='git log --oneline --decorate'
 alias gr='git remote -v'
-alias gh='open -a "Google Chrome.app" "http://defunkt.io/hub/"'
 
 push() {
   git push $@ 
@@ -85,6 +98,7 @@ push() {
 
 #
 alias pa='push && push heroku'
+alias wiki='git browse DynamoMTL/dynamo-central/wiki'
 
 ##################################################################################
 # Rails / Ruby Stuff
@@ -94,9 +108,9 @@ alias r='rails'
 alias rc='rails console'
 alias rs='rails server'
 alias brake='bundle exec rake'
-alias rst='touch tmp/restart.txt'
-alias wat='tail -n 50 log/development.log'
-alias watt='tail -f log/development.log'
+alias rst='rr; touch tmp/restart.txt'
+alias wat='rr; tail -n 50 log/development.log'
+alias watt='rr; tail -f log/development.log'
 
 alias ss='./script/server'
 alias sc='./script/console'
@@ -109,7 +123,7 @@ alias bi='bundle install --without production'
 ##################################################################################
 
 gut() {
-  rake refinery:override $@
+  brake refinery:override "$@"
   n "Finished overriding $@"
 }  
 

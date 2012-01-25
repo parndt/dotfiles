@@ -22,3 +22,4 @@ nnoremap <leader># 80i#<ESC>
 nnoremap <C-t> :CtrlP<CR>
 
 command BW :bn|:bd# " Close current buffer without closing window
+nnoremap <leader>w :BW<CR>

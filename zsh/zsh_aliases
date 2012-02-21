@@ -2,7 +2,7 @@
 # ZSH Stuff
 ##################################################################################
 
-export DEFAULT_RUBY_FOR_RVMRC='1.9.2-p290'
+export DEFAULT_RUBY_FOR_RVMRC='1.9.3-falcon'
 
 alias cda='rake refinery:testing:clean_dummy_app'
 alias mda='rake refinery:testing:dummy_app'

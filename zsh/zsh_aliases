@@ -2,7 +2,7 @@
 # ZSH Stuff
 ##################################################################################
 
-export DEFAULT_RUBY_FOR_RVMRC='1.9.2-p290'
+export DEFAULT_RUBY_FOR_RVMRC='1.9.3-p125'
 
 alias cda='rake refinery:testing:clean_dummy_app'
 alias mda='rake refinery:testing:dummy_app'
@@ -112,6 +112,23 @@ alias gd='git diff --word-diff'
 alias gl='git log --oneline --decorate'
 alias gr='git remote -v'
 
+# Rails 2 and Rails 3 console
+function rc {
+  if [ -e "./script/console" ]; then
+    ./script/console $@
+  else
+    rails console $@
+  fi
+}
+# Rails 2 and Rails 3 server
+function rs {
+  if [ -e "./script/server" ]; then
+    ./script/server $@
+  else
+    rails server $@
+  fi
+}
+
 push() {
   git push $@
   n "git push $@ finished."
@@ -126,15 +143,10 @@ alias wiki='git browse DynamoMTL/dynamo-central/wiki'
 ##################################################################################
 
 alias r='rails'
-alias rc='rails console'
-alias rs='rails server'
 alias brake='bundle exec rake'
 alias rst='rr; touch tmp/restart.txt'
 alias wat='rr; tail -n 50 log/development.log'
 alias watt='rr; tail -f log/development.log'
-
-alias ss='./script/server'
-alias sc='./script/console'
 alias unpack='gem unpack $1 --target $2'
 
 alias bi='bundle install --without production'

@@ -77,7 +77,7 @@ function rr {
   cwd=`pwd`
   not_found=true
   while [[ "`pwd`" != "/" &&  $not_found == true ]]; do
-    if [[ ( -f '.rails_root' ) || ( -f 'config.ru' ) ]]; then
+    if [[ ( -f '.rails_root' ) || ( -f 'config.ru' || -f 'script/rails' || -f 'script/server' ) ]]; then
       not_found=false
       cd `pwd`
       continue

@@ -1,7 +1,18 @@
 set guifont=Monaco:h16
+set guioptions-=m " Remove menu bar
+set guioptions-=T " Remove tool bar
+set guioptions-=r " Remove right hand scroll bar
+set guioptions-=R " Remove right hand scroll bar
+set guioptions-=l " Remove scroll bar
+set guioptions-=L " Remove scroll bar
+
 
 macmenu &File.New\ Tab key=<D-S-t>
 nnoremap <D-t> :CtrlP<CR>
 
 map <leader>c :HEX<CR>
 imap <leader>c <ESC>:HEX<CR>
+
+map <D-/> <plug>NerdCommenterToggle<CR>
+imap <D-/> <ESC><plug>NerdCommenterToggle<CR>i
+

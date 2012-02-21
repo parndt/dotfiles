@@ -37,4 +37,6 @@ source $HOME/.dotfiles/zsh/zsh_aliases
 
 # Customize to your needs...
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
-PATH="$HOME/.dotfiles/bin:$PATH"
+PATH="$HOME/.dotfiles/bin:/usr/local/bin:$PATH"
+
+export DYLD_LIBRARY_PATH=/usr/local/mysql/lib:DYLD_LIBRARY_PATH

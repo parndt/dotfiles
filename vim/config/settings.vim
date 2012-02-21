@@ -1,6 +1,7 @@
 set nocompatible " Disable vi compatibility mode -- enables advanced features (?)
 syntax on " Do syntax highlighting
 color molokai
+filetype plugin on
 set hidden " Allow buffer switch without save
 set listchars=""
 set listchars=tab:\ \ 

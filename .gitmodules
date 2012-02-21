@@ -25,3 +25,15 @@
 [submodule "vim/bundles-available/ctrl-p"]
 	path = vim/bundles-available/ctrl-p
 	url = https://github.com/kien/ctrlp.vim.git
+[submodule "vim/bundles-available/nerdcommenter"]
+	path = vim/bundles-available/nerdcommenter
+	url = https://github.com/scrooloose/nerdcommenter
+[submodule "vim/bundles-available/vimroom"]
+	path = vim/bundles-available/vimroom
+	url = https://github.com/mikewest/vimroom
+[submodule "vim/bundles-available/vim-markdown"]
+	path = vim/bundles-available/vim-markdown
+	url = https://github.com/tpope/vim-markdown
+[submodule "vim/bundles-available/vim-cucumber"]
+	path = vim/bundles-available/vim-cucumber
+	url = https://github.com/tpope/vim-cucumber
